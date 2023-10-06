@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  web:
+  Storms-Burrow:
     build: ./  # Use the Dockerfile in the current directory
     expose:
       - 8000  # Expose the port where Gunicorn is running

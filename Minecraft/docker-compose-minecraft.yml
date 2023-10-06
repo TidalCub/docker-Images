@@ -1,0 +1,11 @@
+version: '1'
+
+services:
+  minecraft:
+    image: itzg/minecraft-server:latest  # Use a pre-built Minecraft server image
+    ports:
+      - "25565:25565"  # Map the default Minecraft server port
+    environment:
+      EULA: "true"  # Accept the Minecraft End User License Agreement (EULA)
+    volumes:
+      - ./minecraft_data:/data  # Store server data outside the container
