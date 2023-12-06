@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  web:
+    build: ./  # Use the Dockerfile in the current directory
+    expose:
+      - 8000  # Expose the port where Gunicorn is running
+
+  webserver:
+    image: nginx:latest
+    ports:
+      - 80:80
+      - 443:443
+    restart: always
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/:ro
+      - ./certs/:/etc/letsencrypt/live/:ro
